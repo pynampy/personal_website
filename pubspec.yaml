@@ -75,14 +75,18 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Handlee
+    - family: Eurostile
       fonts:
-      - asset: fonts/Handlee-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+      - asset: fonts/eurostile.TTF
+      # - asset: fonts/EurostileExtendedBlack.ttf
+      #   weight: 800
   #         style: italic
-    - family: Inter
+    - family: Europa
       fonts:
-      - asset: fonts/Inter-Regular.ttf
+      - asset: fonts/europa.ttf
+    - family: Europa-Regular
+      fonts:
+      - asset: fonts/europa_regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
