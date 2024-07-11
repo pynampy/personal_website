@@ -1,5 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import '../constants.dart';
+import 'package:universal_html/html.dart' as html;
+
+Future<void> showCV() async {
+  var bytes = await rootBundle.load("assets/resume.pdf");
+  final blob = html.Blob([bytes], 'application/pdf');
+  final url = html.Url.createObjectUrlFromBlob(blob);
+  html.window.open(url, "_blank");
+  html.Url.revokeObjectUrl(url);
+}
+
+void mailToMyself() async {
+  String mailUrl = 'mailto:naman.jain221099@gmail.com';
+  try {
+    await launchUrlString(mailUrl);
+  } catch (e) {
+    print(e);
+    await Clipboard.setData(ClipboardData(text: "naman.jain221099@gmail.com"));
+  }
+}
 
 class Header extends StatelessWidget {
   const Header({super.key});
@@ -20,7 +41,16 @@ class Header extends StatelessWidget {
           const SizedBox(
             width: 20,
           ),
-          const HoverElement(),
+          GestureDetector(
+            onTap: () {
+              print("Clicled");
+              mailToMyself();
+            },
+            child: const HoverElement(
+              buttonText: "Say Hello",
+              borderColor: primaryColor,
+            ),
+          ),
         ],
       ),
     );
@@ -28,7 +58,10 @@ class Header extends StatelessWidget {
 }
 
 class HoverElement extends StatefulWidget {
-  const HoverElement({super.key});
+  final String buttonText;
+  final Color borderColor;
+  const HoverElement(
+      {required this.buttonText, required this.borderColor, super.key});
 
   @override
   State<HoverElement> createState() => _HoverElementState();
@@ -83,11 +116,16 @@ class _OnHoverTextState extends State<OnHoverText> {
       onExit: (event) => setState(() {
         isHovered = false;
       }),
-      child: Text("Resume",
-          style: TextStyle(
-              fontFamily: secondaryFont,
-              fontSize: 18,
-              color: isHovered ? primaryColor : Colors.black)),
+      child: GestureDetector(
+        onTap: () {
+          showCV();
+        },
+        child: Text("Resume",
+            style: TextStyle(
+                fontFamily: secondaryFont,
+                fontSize: 18,
+                color: isHovered ? primaryColor : Colors.black)),
+      ),
     );
   }
 }

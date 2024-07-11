@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:namanjain_dev/constants.dart';
 import 'package:namanjain_dev/header/header.dart';
+import 'package:universal_html/html.dart' as html;
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -13,7 +14,7 @@ class MyHomePage extends StatelessWidget {
             children: [
               const Header(),
               const Text(
-                "Designer, Frontend Developer & Mentor",
+                "Flutter Developer & Tech Artisan",
                 style: TextStyle(
                     fontSize: 48,
                     fontWeight: FontWeight.w900,
@@ -83,7 +84,7 @@ class MyHomePage extends StatelessWidget {
                       ),
                       Container(
                         color: Colors.white,
-                        height: 1000,
+                        height: 600,
                         width: double.infinity,
                       ),
                     ],
@@ -103,35 +104,34 @@ class MyHomePage extends StatelessWidget {
                             cardBody1:
                                 "I value simple content structure, clean design patterns, and thoughtful interactions.",
                             cardTitle2: "Things I enjoy designing:",
-                            cardBody2: "UX, UI, Web, Apps, Logos",
+                            cardBody2: "UX, UI & Mobile Apps",
                             cardTitle3: "Design Tools:",
-                            cardBody3:
-                                "Affinity Designer \nFigma\nPen & Paper\nSketch",
+                            cardBody3: "Figma\nPen & Paper\nAdobe XD",
                           ),
                           SkillCard(
                             logo: card2,
                             showLeftAndRightBorder: false,
-                            cardTitle1: "Frontend Developer",
+                            cardTitle1: "Flutter Developer",
                             cardBody1:
-                                "I like to code things from scratch, and enjoy bringing ideas to life in the browser.",
-                            cardTitle2: "Things I enjoy designing:",
-                            cardBody2: "UX, UI, Web, Apps, Logos",
-                            cardTitle3: "Design Tools:",
-                            cardBody3:
-                                "Affinity Designer \nFigma\nPen & Paper\nSketch",
+                                "I like to code things from scratch, and enjoy bringing ideas to life in the mobile.",
+                            cardTitle2: "State Management Solutions:",
+                            cardBody2: "Bloc, GetX & Provider",
+                            cardTitle3: "Dev Tools:",
+                            cardBody3: "Firebase \nVS Code \nGithub \nJira",
                           ),
                           SkillCard(
-                            cardTitle1: "Mentor",
+                            cardTitle1: "Solution Architect",
                             logo: card3,
                             topRight: Radius.circular(20),
                             bottomRight: Radius.circular(20),
                             cardBody1:
-                                "I genuinely care about people, and enjoy helping them work on their craft.",
-                            cardTitle2: "Things I enjoy designing:",
-                            cardBody2: "UX, UI, Web, Apps, Logos",
-                            cardTitle3: "Design Tools:",
+                                "I love solving problems, and enjoy finding the most efficient solution.",
+                            cardTitle2: "What I do?",
+                            cardBody2:
+                                "Find tech solutions for business needs.",
+                            cardTitle3: "What can I do?:",
                             cardBody3:
-                                "Affinity Designer \nFigma\nPen & Paper\nSketch",
+                                "\nLow Level Design\nHigh Level Design\nPython Scripting",
                           )
                         ],
                       ),
@@ -139,13 +139,257 @@ class MyHomePage extends StatelessWidget {
                   ),
                 ],
               ),
-              Container(
-                color: Colors.white,
-                height: 300,
+              SizedBox(
+                height: 50,
+              ),
+              Stack(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        color: Colors.white,
+                        height: 400,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              "I'm proud to have worked for and contributed to these\n awesome companies",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w800, fontSize: 32),
+                            ),
+                            SizedBox(
+                              height: 40,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Image.asset(
+                                  brightlight_health,
+                                  width: 300,
+                                ),
+                                Image.asset(
+                                  cognizant,
+                                  width: 300,
+                                ),
+                                Image.asset(
+                                  suite42,
+                                  width: 300,
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      Container(
+                        width: double.infinity,
+                        color: primaryColor,
+                        padding: EdgeInsets.only(bottom: 50, top: 100),
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 70,
+                            ),
+                            Text(
+                              "Living, learning, & leveling up\n one day at a time.",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: secondaryFont,
+                                color: backgroundColor,
+                                fontSize: 23,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 50,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SocialIcon(
+                                  icon: linkedin,
+                                  url:
+                                      "https://www.linkedin.com/in/naman-jain-15131414b/",
+                                ),
+                                SocialIcon(
+                                  icon: github,
+                                  url: "https://github.com/pynampy",
+                                ),
+                                SocialIcon(
+                                  icon: mail,
+                                  url: "mailto:namanjain221099@gmail.com",
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 50,
+                            ),
+                            Text(
+                              "Handcrafted with \u2764 in Flutter Web | \u00a9 2024",
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontFamily: secondaryFont,
+                                  color: backgroundColor),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  Positioned(
+                    top: 315,
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Color(0xff141C3A),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(
+                                  0.3), // Gray shadow with 50% opacity
+                              spreadRadius: 1,
+                              blurRadius: 2,
+                              offset: Offset(0, 2), // Shadow position
+                            )
+                          ],
+                          borderRadius: BorderRadius.circular(10)),
+                      height: 170,
+                      width: MediaQuery.of(context).size.width * 0.9,
+                      margin: EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.width * 0.05,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text(
+                            "Start a project",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w900,
+                                fontSize: 32,
+                                fontFamily: primaryFont,
+                                color: Colors.white),
+                          ),
+                          Text(
+                            "Interested in working together? We should queue up \na time to chat. I'll buy the coffee.",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontFamily: secondaryFont,
+                              color: Colors.white,
+                            ),
+                          ),
+                          GestureDetector(
+                              onTap: () {
+                                mailToMyself();
+                              },
+                              child: HoverElementFooter()),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
         ));
+  }
+}
+
+class SocialIcon extends StatefulWidget {
+  final String icon;
+  final String url;
+  const SocialIcon({required this.icon, required this.url, super.key});
+
+  @override
+  State<SocialIcon> createState() => _SocialIconState();
+}
+
+class _SocialIconState extends State<SocialIcon> {
+  bool isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () async {
+        try {
+          await html.window.open(widget.url, 'new tab');
+        } catch (e) {
+          print(e);
+        }
+      },
+      child: MouseRegion(
+        onEnter: (event) => setState(() {
+          isHovered = true;
+        }),
+        onExit: (event) => setState(() {
+          isHovered = false;
+        }),
+        child: Container(
+          margin: EdgeInsets.only(left: 10),
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+              color: isHovered ? Colors.white : Colors.transparent,
+              border: Border.all(color: Colors.white),
+              shape: BoxShape.circle),
+          child: Center(
+              child: Image.asset(
+            widget.icon,
+            height: 15,
+            width: 20,
+            color: isHovered ? primaryColor : Colors.white,
+          )),
+        ),
+      ),
+    );
+  }
+}
+
+class HoverElementFooter extends StatefulWidget {
+  const HoverElementFooter({super.key});
+
+  @override
+  State<HoverElementFooter> createState() => _HoverElementFooterState();
+}
+
+class _HoverElementFooterState extends State<HoverElementFooter> {
+  bool isHovered = false;
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (event) => setState(() {
+        isHovered = true;
+      }),
+      onExit: (event) => setState(() {
+        isHovered = false;
+      }),
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+        height: 54,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(100),
+            color: isHovered ? cardIconColor : Colors.transparent,
+            border: Border.all(width: 2, color: cardIconColor)),
+        child: Row(
+          children: [
+            Image.asset(
+              yo_symbol,
+              color: isHovered ? Colors.black : Colors.white,
+              height: 20,
+              width: 20,
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Text(
+              "Let's do this!",
+              style: TextStyle(
+                fontSize: 20,
+                fontFamily: primaryFont,
+                color: isHovered ? Colors.black : Colors.white,
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
 
@@ -189,7 +433,7 @@ class SkillCard extends StatelessWidget {
           bottomRight: bottomRight,
         ),
         child: Container(
-          //  width: 450,
+          height: 700,
           padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 35),
           margin: const EdgeInsets.only(bottom: 2),
           decoration: BoxDecoration(
@@ -216,6 +460,7 @@ class SkillCard extends StatelessWidget {
             ),
           ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
                 margin: const EdgeInsets.only(top: 40),

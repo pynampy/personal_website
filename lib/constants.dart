@@ -13,5 +13,13 @@ const String devices = "assets/devices.png";
 const String card1 = "assets/designer.png";
 const String card2 = "assets/developer.png";
 const String card3 = "assets/mentor.png";
+const String cognizant = "assets/cognizant_1.png";
+const String brightlight_health = "assets/brightlight_health.png";
+const String suite42 = "assets/suite42.png";
+const String yo_symbol = "assets/yo_symbol.png";
+
+const String github = "assets/github.png";
+const String linkedin = "assets/linkedin.png";
+const String mail = "assets/mail_1.png";
 
 //Strings
