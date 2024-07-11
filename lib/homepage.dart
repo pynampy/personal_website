@@ -106,7 +106,7 @@ class MyHomePage extends StatelessWidget {
                             cardTitle2: "Things I enjoy designing:",
                             cardBody2: "UX, UI & Mobile Apps",
                             cardTitle3: "Design Tools:",
-                            cardBody3: "Figma\nPen & Paper\nAdobe XD",
+                            cardBody3: "Figma\nPen & Paper\nAdobe XD\n",
                           ),
                           SkillCard(
                             logo: card2,
@@ -131,7 +131,7 @@ class MyHomePage extends StatelessWidget {
                                 "Find tech solutions for business needs.",
                             cardTitle3: "What can I do?:",
                             cardBody3:
-                                "\nLow Level Design\nHigh Level Design\nPython Scripting",
+                                "Low Level Design\nHigh Level Design\nPython Scripting\n",
                           )
                         ],
                       ),
@@ -140,7 +140,7 @@ class MyHomePage extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 50,
+                height: 70,
               ),
               Stack(
                 children: [
@@ -157,10 +157,10 @@ class MyHomePage extends StatelessWidget {
                               "I'm proud to have worked for and contributed to these\n awesome companies",
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  fontWeight: FontWeight.w800, fontSize: 32),
+                                  fontWeight: FontWeight.w800, fontSize: 30),
                             ),
                             SizedBox(
-                              height: 40,
+                              height: 60,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -433,7 +433,7 @@ class SkillCard extends StatelessWidget {
           bottomRight: bottomRight,
         ),
         child: Container(
-          height: 700,
+          //     height: 700,
           padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 35),
           margin: const EdgeInsets.only(bottom: 2),
           decoration: BoxDecoration(
@@ -535,6 +535,9 @@ class SkillCard extends StatelessWidget {
                     fontSize: 20,
                     fontFamily: primaryFont,
                     fontWeight: FontWeight.w500),
+              ),
+              SizedBox(
+                height: 50,
               ),
             ],
           ),
